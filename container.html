@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        .flex-container {
+            display: flex;
+            flex-direction: column;
+            background-color: DodgerBlue;
+        }
+        
+        .flex-container>div {
+            background-color: #f1f1f1;
+            width: 100px;
+            margin: 10px;
+            text-align: center;
+            line-height: 75px;
+            font-size: 30px;
+        }
+        
+        .topnav {
+            z-index: 2;
+            font-size: 17px;
+            background-color: #5f5f5f;
+            color: #f1f1f1;
+            width: 100%;
+            padding: 0;
+            letter-spacing: 1px;
+            font-family: "Segoe UI", Arial, sans-serif;position: fixed; top: 0px;
+        }
+        
+        .header {
+            width: 100%;
+            overflow: hidden;
+            height: 44px;
+            float: left!important;
+            background-color: #cc0066;
+        }
+        
+        .w3-sidebar.w3-collapse {
+            display: block!important;
+        }
+        
+        .w3-sidebar {
+            height: 100%;
+            width: 200px;
+            background-color: #fff;
+            position: fixed!important;
+            z-index: 1;
+            overflow: auto;
+        }
+        
+        #left-menu {
+            position: fixed;
+            top: 0;
+            padding-top: 44px;
+            padding-bottom: 0;
+            height: 100%;
+            width: 220px;
+            background-color: transparent;
+        }
+        
+        #left-menu-scroll {
+            height: 100%;
+            width: 100%;
+            overflow-y: scroll;
+            overflow-x: hidden;
+            padding-top: 20px;
+        }
+        
+        #sidenav h2 {
+            font-size: 21px;
+            padding-left: 16px;
+            margin: -4px 0 4px 0;
+            width: 204px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="topnav" id="topnav" style="">
+        <div style="overflow:auto;">
+            <div class="header">
+            </div>
+        </div>
+    </div>
+    <div id="sidenav" style="top: 44px; display: block;">
+        <div id="left-menu">
+            <div style="color: #000!important;background-color: #f1f1f1!important;" id="left-menu-scroll">
+                <h2 class="left"><span class="left_h2">Colors</span> Tutorial</h2>
+                <a href="" style="padding-left:30px">HOME</a>
+            </div>
+        </div>
+    </div>
+    <div class="w3-row w3-white" style="padding-left:250px">
+        <div id="main" style="padding: 16px;width: 80%;">
+            <div style="overflow:hidden;height: 35px;">
+            </div>
+            <h1>Containers</h1>
+            <div class="w3-clear nextprev">
+                Container 1
+            </div>
+            <div style="background-color: #ddffdd;border-left: 6px solid #4CAF50;font-size: 16px; margin-top: 16px; margin-bottom: 16px;">
+                <p>Contents are displayed here in green colour.</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>My Title</title>
+    <style>
+        .flex {
+            display: flex;
+            flex-direction: column;
+            background-color: #ffffff;
+            word-wrap: break-word;
+        }
+        
+        #topnav {
+            z-index: 2;
+            font-size: 17px;
+            background-color: #5f5f5f;
+            color: #f1f1f1;
+            width: 100%;
+            padding: 0;
+            letter-spacing: 1px;
+            font-family: "Segoe UI", Arial, sans-serif;
+            position: fixed;
+            top: 0px;text-overflow:e
+        }
+        
+        .header {
+            width: 100%;
+            overflow: hidden;
+            height: 44px;
+            float: left!important;
+            background-color: #cc0066;
+        }
+        
+        #left-menu {
+            position: fixed;
+            top: 0;
+            padding-top: 44px;
+            padding-bottom: 0;
+            height: 100%;
+            width: 550px;
+            background-color: transparent;
+        }
+        
+        #left-menu-scroll {
+            height: 100%;
+            width: 50%;
+            overflow-y: scroll;
+            overflow-x: hidden;
+            padding-top: 20px;
+            color: #000!important;
+            background-color: #f1f1f1!important;
+        }
+        
+        #side-menu {
+            top: 44px;
+            display: block;
+        }
+        
+        #flex-container h2 {
+            font-size: 21px;
+            padding-left: 0px !important;
+            margin: -3px 0 0px 0px;
+            width: 204px;
+        }
+        
+        .flex-container {
+            background-color: #ffffff;
+            margin: 10px;
+            text-align: center;
+            line-height: 30px;
+            font-size: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <header id="topnav">
+        <div style="overflow:auto;">
+            <div class="header">
+            </div>
+        </div>
+    </header>
+    <div id="side-menu">
+        <div id="left-menu">
+            <div id="left-menu-scroll">
+                <h2 style="padding-left:13px;margin-top:0">NOTES <span class="pull-right"><i class="fa fa-plus" ng-click="vm.openAddForm()"></i></span></h2>
+                <div class="flex-container" ng-repeat="item in vm.dataToBind">
+                    <div ng-click="vm.showItem(item)">
+                        <h4><b>{{item.header}}</b></h4>
+                        <div class="flex" style="text-overflow: ellipsis;">
+                            {{item.content}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="w3-row w3-white" style="padding-left:300px">
+
+        <div id="main" style="padding: 16px;width: 80%;">
+            <div style="overflow:hidden;height: 35px;">
+            </div>
+            <h2><b>{{vm.selectedItem.header}}</b></h2>
+            <div class="flex">
+                {{vm.selectedItem.content}}
+            </div>
+            <div class="row form-group" ng-if="vm.addForm">
+                <div class="col-md-4 form-group">
+                    <label for="" class="blocklabel">Add Header</label>
+                    <label for="" class="input"><input type="text" ng-model="header"></label>
+                </div>
+                <div class="col-md-4 form-group">
+                    <label class="blocklabel">Add Content</label>
+                    <label for="" class="input"><input type="text" ng-model="content"></label>
+                </div>
+                <div class="col-md-4 form-group">
+                    <button class="rec-btn-create btn" ng-click="vm.addToList(header,content)">Add</button>
+                    <button class="rec-btn-create btn" ng-click="header=null;content=null;vm.addForm=false">Cancel</button>
+                </div>
+            </div>
+        </div>
+</body>
+
+</html>
